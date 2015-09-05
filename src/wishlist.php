@@ -16,7 +16,7 @@ require_once('phpquery.php');
 //?id=YOUR_AMAZON_ID
 //get the amazon id or force an ID if none is passed
 if(isset($_GET['id'])) $amazon_id = $_GET['id'];
-else $amazon_id = '37XI10RRD17X2';
+else $amazon_id = 'A32BTMVGLOK7HO';
 
 //?reveal=unpurchased
 //checks what to reveal (unpurchased, all, or purchased)... defaults to unpurchased
@@ -35,8 +35,8 @@ elseif($_GET['sort'] == 'price-high') $sort = 'sort=universal-price-desc';
 elseif($_GET['sort'] == 'updated') $sort = 'sort=last-updated';
 else $sort = 'sort=date-added';
 
-$baseurl = 'http://www.amazon.com';
-$content = phpQuery::newDocumentFile("$baseurl/registry/wishlist/$amazon_id?$reveal&$sort&layout=standard");
+$baseurl = 'http://www.amazon.fr';
+$content = phpQuery::newDocumentFile("$baseurl/gp/registry/wishlist/$amazon_id?$reveal&$sort&layout=standard");
 $i = 0;
 
 if($content == '')
